@@ -6,4 +6,4 @@ func _ready():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
-#	pass
+	#print(Engine.get_frames_per_second())
