@@ -32,11 +32,13 @@ func ChangeLevel(lvlName, posX = 0, posY= 0):
 		if($CurrentLevel.get_child_count() > 0):
 			# Aktuell wird einfach immer das Level komplett entfernt mitsamt allen Objekten, Positionen usw.
 			# Hier muss Logik zum Speichern geschrieben werden, damit beim erneuten Betreten nicht wieder alles neu geladen wird.
-			$CurrentLevel.remove_child($CurrentLevel.get_child(0))
+			$CurrentLevel.get_child(0).queue_free()
 			
-		
 		lvlToChange.SetGameEnvironment(self)
-		$CurrentLevel.add_child(lvlToChange)
+		
+		# Wenn man versucht direkt "add_child" aufzurufen kommt es zu massig Fehlen in der Konsole.
+		# Mit Call_Deferred lässt man erst alle Multitreading Prozesse durchlaufen und am Ende fügt man es hinzu.
+		$CurrentLevel.call_deferred("add_child", lvlToChange)
 	
 	if(posX > 0 || posY > 0):
 		# Aktuell wird immer davon ausgegangen, dass eine Essence existiert. Das muss auf jeden Fall dynamischer werden.
