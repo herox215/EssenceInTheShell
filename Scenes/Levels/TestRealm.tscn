@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Misc/BackgroundImage.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Tilesets/TestRealm/TestRealm.tres" type="TileSet" id=2]
 [ext_resource path="res://Scenes/Misc/Teleport.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Misc/TitleTrigger.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/Levels/TestRealm.gd" type="Script" id=5]
 
 [node name="TestRealm" type="Node2D"]
@@ -35,4 +36,9 @@ position = Vector2( 271.579, -110.526 )
 LevelToTeleportTo = "TestCave"
 xPos = 100
 yPos = 100
+
+[node name="TitleTrigger" parent="Interactions" instance=ExtResource( 4 )]
+position = Vector2( 95.9139, 63.8847 )
+scale = Vector2( 0.1, 0.1 )
+Title = "Wonderful place"
 [connection signal="teleport" from="Interactions/Teleport" to="." method="_on_Teleport_teleport"]

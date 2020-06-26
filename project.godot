@@ -21,14 +21,6 @@ boot_splash/image="res://Assets/bootScreen.png"
 boot_splash/bg_color=Color( 1, 1, 1, 1 )
 config/icon="res://Assets/icon.png"
 
-[editor]
-
-script_templates_search_path="res://Scripts/Templates"
-
-[global]
-
-hz=false
-
 [input]
 
 ui_left={
@@ -68,5 +60,4 @@ ui_sprint={
 [rendering]
 
 quality/2d/use_pixel_snap=true
-quality/subsurface_scattering/scale=1
 environment/default_environment="res://default_env.tres"
