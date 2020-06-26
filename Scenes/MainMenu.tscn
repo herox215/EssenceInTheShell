@@ -10,7 +10,7 @@
 [ext_resource path="res://Assets/UI/MainMenu/continue/continue_normal.png" type="Texture" id=8]
 [ext_resource path="res://Assets/UI/MainMenu/end/end_normal.png" type="Texture" id=9]
 [ext_resource path="res://Assets/UI/MainMenu/continue/continue_hover.png" type="Texture" id=10]
-[ext_resource path="res://Assets/UI/MainMenu/main_menu_background.png" type="Texture" id=11]
+[ext_resource path="res://Scripts/UI/MainMenu/Continue.gd" type="Script" id=11]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -20,12 +20,6 @@ __meta__ = {
 "_edit_use_anchors_": false,
 "_edit_vertical_guides_": [ 225.787 ]
 }
-
-[node name="Background" type="Sprite" parent="."]
-position = Vector2( -1.3604, 0 )
-scale = Vector2( 1.28619, 1 )
-texture = ExtResource( 11 )
-centered = false
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
@@ -72,14 +66,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="continue" type="TextureButton" parent="MarginContainer/CenterContainer/VBoxContainer/MenuOptions"]
+[node name="Continue" type="TextureButton" parent="MarginContainer/CenterContainer/VBoxContainer/MenuOptions"]
 margin_right = 296.0
 margin_bottom = 78.0
 size_flags_horizontal = 4
 texture_normal = ExtResource( 8 )
 texture_hover = ExtResource( 10 )
+script = ExtResource( 11 )
 
-[node name="options" type="TextureButton" parent="MarginContainer/CenterContainer/VBoxContainer/MenuOptions"]
+[node name="Options" type="TextureButton" parent="MarginContainer/CenterContainer/VBoxContainer/MenuOptions"]
 margin_left = 22.0
 margin_top = 82.0
 margin_right = 274.0
@@ -88,7 +83,7 @@ size_flags_horizontal = 4
 texture_normal = ExtResource( 6 )
 texture_hover = ExtResource( 5 )
 
-[node name="end" type="TextureButton" parent="MarginContainer/CenterContainer/VBoxContainer/MenuOptions"]
+[node name="End" type="TextureButton" parent="MarginContainer/CenterContainer/VBoxContainer/MenuOptions"]
 margin_left = 79.0
 margin_top = 181.0
 margin_right = 217.0
@@ -142,5 +137,5 @@ margin_right = 82.0
 margin_bottom = 84.0
 texture = ExtResource( 2 )
 stretch_mode = 4
-[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/MenuOptions/continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/MenuOptions/end" to="." method="_on_end_pressed"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/MenuOptions/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/MenuOptions/End" to="." method="_on_end_pressed"]
