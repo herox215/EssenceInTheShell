@@ -1,0 +1,141 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/Creatures/Gobbler/Idle/Front/Gobbler_Front1.png" type="Texture" id=1]
+[ext_resource path="res://Assets/icon.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/UI/MainMenu/MainMenu.gd" type="Script" id=3]
+[ext_resource path="res://Assets/UI/MainMenu/title_main_menu.png" type="Texture" id=4]
+[ext_resource path="res://Assets/UI/MainMenu/options/options_hover.png" type="Texture" id=5]
+[ext_resource path="res://Assets/UI/MainMenu/options/options_normal.png" type="Texture" id=6]
+[ext_resource path="res://Assets/UI/MainMenu/end/end_hover.png" type="Texture" id=7]
+[ext_resource path="res://Assets/UI/MainMenu/continue/continue_normal.png" type="Texture" id=8]
+[ext_resource path="res://Assets/UI/MainMenu/end/end_normal.png" type="Texture" id=9]
+[ext_resource path="res://Assets/UI/MainMenu/continue/continue_hover.png" type="Texture" id=10]
+[ext_resource path="res://Scripts/UI/MainMenu/Continue.gd" type="Script" id=11]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [ 225.787 ]
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 0
+custom_constants/margin_top = 20
+custom_constants/margin_left = 0
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
+margin_top = 20.0
+margin_right = 1024.0
+margin_bottom = 580.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer"]
+margin_left = 148.0
+margin_top = 88.0
+margin_right = 875.0
+margin_bottom = 472.0
+size_flags_horizontal = 4
+custom_constants/separation = 32
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/CenterContainer/VBoxContainer"]
+margin_right = 727.0
+margin_bottom = 92.0
+size_flags_horizontal = 4
+texture = ExtResource( 4 )
+
+[node name="MenuOptions" type="VBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer"]
+margin_left = 215.0
+margin_top = 124.0
+margin_right = 511.0
+margin_bottom = 384.0
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Continue" type="TextureButton" parent="MarginContainer/CenterContainer/VBoxContainer/MenuOptions"]
+margin_right = 296.0
+margin_bottom = 78.0
+size_flags_horizontal = 4
+texture_normal = ExtResource( 8 )
+texture_hover = ExtResource( 10 )
+script = ExtResource( 11 )
+
+[node name="Options" type="TextureButton" parent="MarginContainer/CenterContainer/VBoxContainer/MenuOptions"]
+margin_left = 22.0
+margin_top = 82.0
+margin_right = 274.0
+margin_bottom = 177.0
+size_flags_horizontal = 4
+texture_normal = ExtResource( 6 )
+texture_hover = ExtResource( 5 )
+
+[node name="End" type="TextureButton" parent="MarginContainer/CenterContainer/VBoxContainer/MenuOptions"]
+margin_left = 79.0
+margin_top = 181.0
+margin_right = 217.0
+margin_bottom = 260.0
+size_flags_horizontal = 4
+texture_normal = ExtResource( 9 )
+texture_hover = ExtResource( 7 )
+
+[node name="MainMenuContainer" type="MarginContainer" parent="."]
+visible = false
+margin_left = -706.034
+margin_top = 187.732
+margin_right = -330.034
+margin_bottom = 451.732
+custom_constants/margin_right = 120
+custom_constants/margin_top = 80
+custom_constants/margin_left = 120
+custom_constants/margin_bottom = 80
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMenuContainer"]
+margin_left = 120.0
+margin_top = 80.0
+margin_right = 256.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuContainer/HBoxContainer"]
+margin_right = 32.0
+margin_bottom = 104.0
+
+[node name="Gobbler" type="TextureRect" parent="MainMenuContainer/HBoxContainer/VBoxContainer"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="MainMenuContainer/HBoxContainer"]
+margin_left = 36.0
+margin_right = 136.0
+margin_bottom = 104.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Gamename" type="TextureRect" parent="MainMenuContainer/HBoxContainer/CenterContainer"]
+margin_left = 18.0
+margin_top = 20.0
+margin_right = 82.0
+margin_bottom = 84.0
+texture = ExtResource( 2 )
+stretch_mode = 4
+[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/MenuOptions/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/MenuOptions/End" to="." method="_on_end_pressed"]
