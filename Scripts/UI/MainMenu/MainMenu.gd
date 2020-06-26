@@ -5,7 +5,7 @@ func _process(delta):
 
 # Startet das Spiel
 func _on_continue_pressed():
-	get_tree().change_scene("res://Scenes/Essence.tscn")
+	get_tree().change_scene("res://Scenes/GameEnvironment.tscn")
 
 # Beendet das Spiel
 func _on_end_pressed():

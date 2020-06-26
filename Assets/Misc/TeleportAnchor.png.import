@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Ring.png-e115e4cdebf1951e98c78a51ef40d236.stex"
+path="res://.import/TeleportAnchor.png-50b10414198aa7254f8847f53ddd0229.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Essence/Ring.png"
-dest_files=[ "res://.import/Ring.png-e115e4cdebf1951e98c78a51ef40d236.stex" ]
+source_file="res://Assets/Misc/TeleportAnchor.png"
+dest_files=[ "res://.import/TeleportAnchor.png-50b10414198aa7254f8847f53ddd0229.stex" ]
 
 [params]
 
