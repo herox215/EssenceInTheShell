@@ -1,7 +1,7 @@
 extends Node2D
 
 # Updates the ringposition.
-func _process(delta):
+func _process(_delta):
 	var mousePosition = get_local_mouse_position()
 	rotation += mousePosition.angle()
 	

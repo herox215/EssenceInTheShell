@@ -6,3 +6,5 @@
 script = ExtResource( 1 )
 
 [node name="CurrentLevel" type="Node2D" parent="."]
+
+[node name="CurrentPlayer" type="Node2D" parent="."]

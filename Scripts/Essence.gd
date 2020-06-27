@@ -28,7 +28,7 @@ func _physics_process(delta):
 	move_and_slide(_velocity)
 
 
-func _process(delta):
+func _process(_delta):
 	if(Input.get_action_strength("ui_select") == 1):
 		print($Ring.GetAngle())
 	if(Input.get_action_strength("ui_sprint") > 0):
