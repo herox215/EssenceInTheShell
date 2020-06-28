@@ -26,6 +26,7 @@ func _physics_process(delta):
 		_velocity = _velocity.move_toward(Vector2.ZERO, Friction * delta)
 	
 	move_and_slide(_velocity)
+	global_position = global_position.round()
 
 
 func _process(delta):
@@ -35,6 +36,6 @@ func _process(delta):
 		_currentSpeed = MaxSpeed + SprintSpeed
 	else:
 		_currentSpeed = MaxSpeed
-		
+	
 func SetPosition(x,y):
 	position = Vector2(x,y)
