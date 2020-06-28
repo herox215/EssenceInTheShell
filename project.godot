@@ -78,6 +78,6 @@ ui_debug={
 [rendering]
 
 quality/2d/use_pixel_snap=true
-quality/filters/anisotropic_filter_level=9
+quality/filters/anisotropic_filter_level=10
 quality/subsurface_scattering/scale=1
 environment/default_environment="res://default_env.tres"
