@@ -14,4 +14,6 @@ position = Vector2( 0.183594, -0.791069 )
 LevelToTeleportTo = "TestRealm"
 xPos = 271
 yPos = -60
+
+[node name="Objects" type="YSort" parent="."]
 [connection signal="teleport" from="Interactions/Teleport" to="." method="_on_Teleport_teleport"]

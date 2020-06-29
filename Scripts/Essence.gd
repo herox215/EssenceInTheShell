@@ -1,13 +1,14 @@
 extends KinematicBody2D
 
 var _velocity = Vector2.ZERO
+var _currentSpeed = 0
 
 export var Friction = 1000
 export var MaxSpeed = 100
 export var Acceleration = 1000
 export var SprintSpeed = 30
 
-var _currentSpeed = 0
+var GUI = null
 
 func _ready():
 	_currentSpeed = MaxSpeed
