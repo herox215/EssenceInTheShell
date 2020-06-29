@@ -51,8 +51,8 @@ func ChangeLevel(lvlName, posX = 0, posY= 0):
 		
 func ExecuteCommand(command):
 	# Wir wollen ein Level ändern
-	if(command.Name == "ChangeLevel"):
+	if(command.Name.to_lower() == "changelevel" || command.Name.to_lower() == "cl"):
 		ChangeLevel(command.GetValue(0), command.GetValue(1), command.GetValue(2))
-	if(command.Name == "Coordinates"):
+	if(command.Name.to_lower() == "coordinates"):
 		$CurrentPlayer/Essence/GUI.WriteOutput($CurrentPlayer/Essence.position)
 
