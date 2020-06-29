@@ -6,10 +6,10 @@ func SetGameEnvironment(envi):
 	_gameEnvi = envi
 
 func Open():
-	$Objects.add_child(_gameEnvi.GetPlayer())
+	$Objects.add_child(_gameEnvi.CurrentPlayer)
 
 func Close():
-	$Objects.remove_child(_gameEnvi.GetPlayer())
+	$Objects.remove_child(_gameEnvi.CurrentPlayer)
 
 
 func _on_Teleport_teleport(command):

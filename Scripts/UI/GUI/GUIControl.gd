@@ -10,15 +10,18 @@ func SetGameEnvironment(envi):
 	_gameEnvi = envi
 
 func WriteOutput(text):
-	$TextOutputBox.text = $TextOutputBox.text + "\n" + str(text)
+	$Control/TextOutputBox.text = $Control/TextOutputBox.text + "\n"
+	$Control/TextOutputBox.text += "[" + str(OS.get_time().hour) + ":" + str(OS.get_time().minute) +"] : " + str(text)
 
 func _process(delta):
 	if(_debugMode):
-		$CommandTextBox.show()
-		$CommandTextBox.grab_focus()
+		$Control/CommandTextBox.show()
+		$Control/TextOutputBox.show()
+		$Control/CommandTextBox.grab_focus()
 	else:
-		$CommandTextBox.text = ""
-		$CommandTextBox.hide()
+		$Control/CommandTextBox.text = ""
+		$Control/CommandTextBox.hide()
+		$Control/TextOutputBox.hide()
 
 func _input(event):
 	if(event.get_action_strength("ui_debug") > 0 && !event.is_echo()):

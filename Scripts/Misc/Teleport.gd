@@ -11,12 +11,6 @@ signal teleport(command)
 func _ready():
 	_playerValidator = load("res://Scripts/Misc/ObjectValidator.gd").new()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
 func _on_TeleportArea_body_entered(body):
 	# Wenn body ein Player ist, wird teleportiert
 	# Ansonsten passiert nichts
@@ -29,8 +23,6 @@ func _on_TeleportArea_body_entered(body):
 		command.AddValue(xPos)
 		command.AddValue(yPos)
 		emit_signal("teleport", command)
-	
-
 
 func _on_TeleportTime_timeout():
 	_ready = true

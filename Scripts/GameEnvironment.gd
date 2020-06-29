@@ -1,11 +1,9 @@
 extends Node2D
 
 var CurrentPlayer = null
-var _gui = null
 
 func _ready():
-	_gui = _createGui()
-	CurrentPlayer = _createPlayer(_gui)
+	CurrentPlayer = _createPlayer(_createGui())
 	ChangeLevel("TestRealm")
 
 func _createGui():
@@ -50,18 +48,14 @@ func ChangeLevel(lvlName, posX = 0, posY= 0):
 	if(int(posX) > 0 || int(posY) > 0):
 		# Aktuell wird immer davon ausgegangen, dass eine Essence existiert. Das muss auf jeden Fall dynamischer werden.
 		CurrentPlayer.SetPosition(posX,posY)
-	
-	
-		
+
 func ExecuteCommand(command):
+	command.Name = command.Name.to_lower()
 	print("Command will be executed: " + command.Name)
 	# Wir wollen ein Level ändern
-	if(command.Name.to_lower() == "changelevel" || command.Name.to_lower() == "cl" || command.Name.to_lower() == "tp"):
+	if(command.Name == "changelevel" || command.Name == "cl" || command.Name == "tp"):
 		ChangeLevel(command.GetValue(0), command.GetValue(1), command.GetValue(2))
-		_gui.WriteOutput("Level changed to " + command.GetValue(0))
+		CurrentPlayer.GUI.WriteOutput("Level changed to " + command.GetValue(0))
 		
-	if(command.Name.to_lower() == "coordinates" || command.Name.to_lower() == "cor"):
-		_gui.WriteOutput($CurrentPlayer/Essence.position)
-
-func GetPlayer():
-	return CurrentPlayer
+	if(command.Name == "coordinates" || command.Name == "cor"):
+		CurrentPlayer.GUI.WriteOutput($CurrentPlayer/Essence.position)
