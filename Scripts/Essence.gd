@@ -6,6 +6,7 @@ export var Friction = 1000
 export var MaxSpeed = 100
 export var Acceleration = 1000
 export var SprintSpeed = 30
+export var Name = ""
 
 var _currentSpeed = 0
 
@@ -39,3 +40,6 @@ func _process(_delta):
 	
 func SetPosition(x,y):
 	position = Vector2(x,y)
+	
+func test():
+	print("Es hat geklappt:)")

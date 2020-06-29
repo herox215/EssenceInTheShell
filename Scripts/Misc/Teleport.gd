@@ -3,12 +3,13 @@ extends Node2D
 export var LevelToTeleportTo = ""
 export var xPos = 0
 export var yPos = 0
+var _playerValidator = null
 
 signal teleport(command)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	_playerValidator = load("res://Scripts/Misc/ObjectValidator.gd").new()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -17,10 +18,12 @@ func _ready():
 
 
 func _on_TeleportArea_body_entered(body):
-	var command = load("res://Scripts/Misc/Command.gd").new("ChangeLevel")
-	command.AddValue(LevelToTeleportTo)
-	command.AddValue(xPos)
-	command.AddValue(yPos)
+	# Wenn body ein Player ist, wird teleportiert
+	# Ansonsten passiert nichts
+	if (_playerValidator.IsPlayer(body)):
+		var command = load("res://Scripts/Misc/Command.gd").new("ChangeLevel")
+		command.AddValue(LevelToTeleportTo)
+		command.AddValue(xPos)
+		command.AddValue(yPos)
+		emit_signal("teleport", command)
 	
-	# Body wird vorerst nicht genutzt.
-	emit_signal("teleport", command)
