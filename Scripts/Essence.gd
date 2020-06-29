@@ -40,6 +40,4 @@ func _process(_delta):
 	
 func SetPosition(x,y):
 	position = Vector2(x,y)
-	
-func test():
-	print("Es hat geklappt:)")
+
