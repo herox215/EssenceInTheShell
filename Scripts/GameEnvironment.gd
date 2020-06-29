@@ -17,6 +17,7 @@ func _createGui():
 func _createPlayer(gui):
 	var newPlayer = load("res://Scenes/Essence.tscn").instance()
 	newPlayer.add_child(gui)
+	newPlayer.GUI = gui
 	return newPlayer
 
 # Ändert das aktuelle Level.
