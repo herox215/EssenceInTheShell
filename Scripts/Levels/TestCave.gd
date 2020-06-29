@@ -9,5 +9,5 @@ func _ready():
 	pass
 
 
-func _on_Teleport_teleport(lvlName, x, y):
-	_gameEnvi.ChangeLevel(lvlName, x, y)
+func _on_Teleport_teleport(command):
+	_gameEnvi.ExecuteCommand(command)

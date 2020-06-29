@@ -12,6 +12,6 @@ script = ExtResource( 2 )
 [node name="Teleport" parent="Interactions" instance=ExtResource( 1 )]
 position = Vector2( 0.183594, -0.791069 )
 LevelToTeleportTo = "TestRealm"
-xPos = 3
-yPos = 10
+xPos = 271
+yPos = -60
 [connection signal="teleport" from="Interactions/Teleport" to="." method="_on_Teleport_teleport"]

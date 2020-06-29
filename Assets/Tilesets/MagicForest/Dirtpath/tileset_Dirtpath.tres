@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=2 format=2]
 
-[ext_resource path="tileset_Dirtpath.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Tilesets/MagicForest/Dirtpath/tileset_Dirtpath.png" type="Texture" id=1]
 
 [resource]
 4/name = "tileset_Dirtpath.png 4"
@@ -11,6 +11,10 @@
 4/tile_mode = 0
 4/occluder_offset = Vector2( 0, 0 )
 4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
 4/shapes = [  ]
 4/z_index = 0
 48/name = "tileset_Dirtpath.png 48"
@@ -30,5 +34,9 @@
 48/autotile/z_index_map = [  ]
 48/occluder_offset = Vector2( 0, 0 )
 48/navigation_offset = Vector2( 0, 0 )
+48/shape_offset = Vector2( 0, 0 )
+48/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+48/shape_one_way = false
+48/shape_one_way_margin = 0.0
 48/shapes = [  ]
 48/z_index = 0

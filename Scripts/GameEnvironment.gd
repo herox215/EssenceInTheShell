@@ -1,22 +1,25 @@
 extends Node2D
 
 var _currentPlayer = null
+var _gui = null
 
 func _ready():
-	_currentPlayer = _createPlayer(true)
-	self.add_child(_currentPlayer)
+	_currentPlayer = _createPlayer()
+	_gui = _createGui()
+	
+	_currentPlayer.add_child(_gui)
+	
+	$CurrentPlayer.add_child(_currentPlayer)
 	ChangeLevel("TestRealm")
 
+func _createGui():
+	var gui = load("res://Scenes/GUI/GUI.tscn").instance()
+	gui.SetGameEnvironment(self)
+	return gui;
+
 # Erstellt einen neuen Spieler, optional mit Kamera.
-func _createPlayer(withCamera):
+func _createPlayer():
 	var newPlayer = load("res://Scenes/Essence.tscn").instance()
-	
-	if(withCamera == true):
-		var cameraToAdd = Camera2D.new()
-		cameraToAdd.current = true
-		cameraToAdd.zoom.x = 0.5
-		cameraToAdd.zoom.y = 0.5
-		newPlayer.add_child(cameraToAdd);
 		
 	return newPlayer
 
@@ -40,6 +43,16 @@ func ChangeLevel(lvlName, posX = 0, posY= 0):
 		# Mit Call_Deferred lässt man erst alle Multitreading Prozesse durchlaufen und am Ende fügt man es hinzu.
 		$CurrentLevel.call_deferred("add_child", lvlToChange)
 	
-	if(posX > 0 || posY > 0):
+	if(int(posX) > 0 || int(posY) > 0):
 		# Aktuell wird immer davon ausgegangen, dass eine Essence existiert. Das muss auf jeden Fall dynamischer werden.
-		$Essence.SetPosition(posX,posY)
+		$CurrentPlayer/Essence.SetPosition(posX,posY)
+		
+	$CurrentPlayer/Essence/GUI.WriteOutput("Level changed to " + lvlName)
+		
+func ExecuteCommand(command):
+	# Wir wollen ein Level ändern
+	if(command.Name == "ChangeLevel"):
+		ChangeLevel(command.GetValue(0), command.GetValue(1), command.GetValue(2))
+	if(command.Name == "Coordinates"):
+		$CurrentPlayer/Essence/GUI.WriteOutput($CurrentPlayer/Essence.position)
+
