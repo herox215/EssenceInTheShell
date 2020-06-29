@@ -4,6 +4,8 @@
 [ext_resource path="res://Scripts/UI/GUI/CommandTextBox.gd" type="Script" id=2]
 
 [node name="GUI" type="Camera2D"]
+z_index = 4096
+z_as_relative = false
 current = true
 zoom = Vector2( 0.5, 0.5 )
 smoothing_speed = 30.0

@@ -1,6 +1,5 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Scenes/Misc/Teleport.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Levels/TestCave.gd" type="Script" id=2]
 
 [node name="TestCave" type="Node2D"]
@@ -9,9 +8,4 @@ script = ExtResource( 2 )
 
 [node name="Interactions" type="Node2D" parent="."]
 
-[node name="Teleport" parent="Interactions" instance=ExtResource( 1 )]
-position = Vector2( 0.183594, -0.791069 )
-LevelToTeleportTo = "TestRealm"
-xPos = 271
-yPos = -60
-[connection signal="teleport" from="Interactions/Teleport" to="." method="_on_Teleport_teleport"]
+[node name="Objects" type="YSort" parent="."]
