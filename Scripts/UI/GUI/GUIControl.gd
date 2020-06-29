@@ -3,6 +3,9 @@ extends Node2D
 var _debugMode = false
 var _gameEnvi = ""
 
+func IsDebug():
+	return _debugMode
+
 func SetGameEnvironment(envi):
 	_gameEnvi = envi
 
