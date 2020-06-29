@@ -22,11 +22,7 @@ func _createPlayer(gui):
 # Ändert das aktuelle Level.
 # Optional kann die Position mit angegeben werden.
 func ChangeLevel(lvlName, posX = 0, posY= 0):
-	if(lvlName != "" && lvlName != null):
-		if(int(posX) > 0 || int(posY) > 0):
-			# Aktuell wird immer davon ausgegangen, dass eine Essence existiert. Das muss auf jeden Fall dynamischer werden.
-			CurrentPlayer.SetPosition(posX,posY)
-		
+	if(lvlName != "" && lvlName != null && lvlName.to_lower() != $CurrentLevel.name.to_lower()):
 		print("ChangeLevel started...")
 		if($CurrentLevel.get_child_count() > 0):
 			# Aktuell wird einfach immer das Level komplett entfernt mitsamt allen Objekten, Positionen usw.
@@ -49,15 +45,21 @@ func ChangeLevel(lvlName, posX = 0, posY= 0):
 		$CurrentLevel.call_deferred("add_child", lvlToChange)
 		
 		print("Level added.")
-	_gui.WriteOutput("Level changed to " + lvlName)
+
+	if(int(posX) > 0 || int(posY) > 0):
+		# Aktuell wird immer davon ausgegangen, dass eine Essence existiert. Das muss auf jeden Fall dynamischer werden.
+		CurrentPlayer.SetPosition(posX,posY)
+	
 	
 		
 func ExecuteCommand(command):
 	print("Command will be executed: " + command.Name)
 	# Wir wollen ein Level ändern
-	if(command.Name.to_lower() == "changelevel" || command.Name.to_lower() == "cl"):
+	if(command.Name.to_lower() == "changelevel" || command.Name.to_lower() == "cl" || command.Name.to_lower() == "tp"):
 		ChangeLevel(command.GetValue(0), command.GetValue(1), command.GetValue(2))
-	if(command.Name.to_lower() == "coordinates"):
+		_gui.WriteOutput("Level changed to " + command.GetValue(0))
+		
+	if(command.Name.to_lower() == "coordinates" || command.Name.to_lower() == "cor"):
 		_gui.WriteOutput($CurrentPlayer/Essence.position)
 
 func GetPlayer():
