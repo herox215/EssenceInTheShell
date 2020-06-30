@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Assets/Objects/Nature/Magic Forest/Magic_Tree_2.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Misc/Interactions/InspectInteraction.tscn" type="PackedScene" id=2]
 
 [node name="Red Magic Tree" type="Node2D"]
 position = Vector2( -0.407822, -30.586 )
@@ -14,3 +15,7 @@ position = Vector2( 0.264858, -19.8697 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( -10.2589, 17.6705, -9.30864, 21.9102, -11.1361, 25.1265, -8.13908, 29.293, 0.413334, 32.2169, 9.11195, 29.1468, 11.2318, 24.5417, 9.98912, 21.6178, 11.378, 18.2553, 21.4654, 11.7496, 11.6704, 5.68251, -9.01625, 5.02464, -23.1972, 9.48359 )
+
+[node name="InspectInteraction" parent="StaticBody2D" instance=ExtResource( 2 )]
+position = Vector2( 11.2655, 10.5145 )
+InspectMessage = "Thats a really red tree..."

@@ -13,6 +13,7 @@ var GUI = null
 
 func _ready():
 	_currentSpeed = MaxSpeed
+	$Ring.Player = self
 
 func _physics_process(delta):
 	var inputVector = Vector2.ZERO
@@ -39,4 +40,5 @@ func _process(_delta):
 		_currentSpeed = MaxSpeed
 	
 func SetPosition(x,y):
+	$Ring.Clear()
 	position = Vector2(x,y)

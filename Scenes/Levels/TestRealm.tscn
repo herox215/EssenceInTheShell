@@ -141,5 +141,5 @@ position = Vector2( -248, -8 )
 [node name="Structure" type="YSort" parent="Objects"]
 
 [node name="Little House" parent="Objects/Structure" instance=ExtResource( 4 )]
-position = Vector2( 269.921, -165.198 )
+position = Vector2( 270.498, -165.775 )
 [connection signal="teleport" from="Interactions/Teleport" to="." method="_on_Teleport_teleport"]
