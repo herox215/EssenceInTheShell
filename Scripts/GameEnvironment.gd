@@ -13,7 +13,7 @@ func _createGui():
 
 # Erstellt einen neuen Spieler, optional mit Kamera.
 func _createPlayer(gui):
-	var newPlayer = load("res://Scenes/Essence.tscn").instance()
+	var newPlayer = load("res://Scenes/Misc/Player.tscn").instance()
 	newPlayer.add_child(gui)
 	newPlayer.GUI = gui
 	return newPlayer
