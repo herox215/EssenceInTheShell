@@ -24,6 +24,7 @@ func _process(delta):
 	if(Input.is_action_just_released("ui_interaction") && _interactionDurationPressed < 1 && _selectedInteractInteraction != null):
 		Player.GUI.SendCommandToGameEnvironment(_selectedInteractInteraction.Command)
 		_interactionDurationPressed = 0
+		_selectedInteractInteraction = null
 	
 	_interact(delta)
 
