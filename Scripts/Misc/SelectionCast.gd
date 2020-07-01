@@ -1,8 +1,7 @@
 extends RayCast2D
 
 # Der SelectionCast regelt:
-# Interargieren bzw Untersuchen
-# Interagieren kann sein: Sprechen,Schalter aktivieren
+# Untersuchen
 
 var _selectedInspection = null
 

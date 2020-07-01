@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Objects/Nature/Magic Forest/Magic_Tree_1.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Objects/Nature/Magic Forest/Blue Magic Tree.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Misc/Interactions/InspectInteraction.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Misc/Interactions/InteractInteraction.tscn" type="PackedScene" id=4]
 
 [node name="Blue Magic Tree" type="Node2D"]
 position = Vector2( -0.407806, -19.7789 )
@@ -23,3 +24,6 @@ polygon = PoolVector2Array( -1.17654, 14.7909, -10.7238, 9.93689, -12.8536, 5.28
 [node name="InspectInteraction" parent="StaticBody2D" instance=ExtResource( 3 )]
 position = Vector2( 8.26134, 14.0193 )
 InspectMessage = "Magic TREE!"
+
+[node name="InteractInteraction" parent="StaticBody2D" instance=ExtResource( 4 )]
+position = Vector2( 8.69361, -0.899338 )

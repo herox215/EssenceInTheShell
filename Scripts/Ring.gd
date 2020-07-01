@@ -21,8 +21,8 @@ func _process(delta):
 	
 	# Experimental!!
 	# Wenn die SelectTaste losgelassen wird bevor die Inspection durchgelaufen ist dann wird die Aktion ausgeführt.
-	if(Input.is_action_just_released("ui_interaction") && _interactionDurationPressed < 1):
-		print("Aktion ausführen!")
+	if(Input.is_action_just_released("ui_interaction") && _interactionDurationPressed < 1 && _selectedInteractInteraction != null):
+		Player.GUI.SendCommandToGameEnvironment(_selectedInteractInteraction.Command)
 		_interactionDurationPressed = 0
 	
 	_interact(delta)
@@ -30,6 +30,7 @@ func _process(delta):
 # Bereinigt die Auswahl.
 func Clear():
 	$SelectionCast.Clear()
+	$InteractionCast.Clear()
 	_selectedInspectionInteraction = null
 
 func _interact(delta):
@@ -69,3 +70,11 @@ func _on_SelectionCast_OnInspectionDeselected():
 
 func _on_SelectionCast_OnInspectionSelected(inspectionInteraction):
 	_selectedInspectionInteraction = inspectionInteraction
+
+
+func _on_InteractionCast_OnInteractionSelected(interactInteraction):
+	_selectedInteractInteraction = interactInteraction
+
+
+func _on_InteractionCast_OnInteractionDeselected():
+	_selectedInteractInteraction = null
