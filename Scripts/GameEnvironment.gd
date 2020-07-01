@@ -58,4 +58,4 @@ func ExecuteCommand(command):
 		CurrentPlayer.GUI.WriteOutput("Level changed to " + command.GetValue(0))
 		
 	if(command.Name == "coordinates" || command.Name == "cor"):
-		CurrentPlayer.GUI.WriteOutput($CurrentPlayer/Essence.position)
+		CurrentPlayer.GUI.WriteOutput(CurrentPlayer.position)
