@@ -59,3 +59,6 @@ func ExecuteCommand(command):
 		
 	if(command.Name == "coordinates" || command.Name == "cor"):
 		CurrentPlayer.GUI.WriteOutput(CurrentPlayer.position)
+		
+	if(command.Name == "changeposition"):
+		ChangeLevel("", command.GetValue(0), command.GetValue(1))
