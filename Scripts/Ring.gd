@@ -3,9 +3,8 @@ extends Node2D
 var _interactionDurationPressed = 0
 var _interractionPressed = false
 
-var _selectedInspectionInteraction = null
-var _selectedInteractInteraction = null
-
+var _selectedInteraction = null
+var _interacted = false
 var Player = null
 
 # Aktualisiert die Position des Rings bzw führt Interaktionen aus.
@@ -19,41 +18,43 @@ func _process(delta):
 	if(rotation_degrees < 0):
 		rotation_degrees = 360
 	
-	# Experimental!!
-	# Wenn die SelectTaste losgelassen wird bevor die Inspection durchgelaufen ist dann wird die Aktion ausgeführt.
-	if(Input.is_action_just_released("ui_interaction") && _interactionDurationPressed < 1 && _selectedInteractInteraction != null):
-		Player.GUI.SendCommandToGameEnvironment(_selectedInteractInteraction.Command)
-		_interactionDurationPressed = 0
-		_selectedInteractInteraction = null
-	
+	if(_selectedInteraction != null):
+		# Experimental!!
+		# Wenn die SelectTaste losgelassen wird bevor die Inspection durchgelaufen ist dann wird die Aktion ausgeführt.
+		if(Input.is_action_just_released("ui_interaction") && _interactionDurationPressed < 0.2 && _selectedInteraction.Command != null && !_interacted):
+			Player.GUI.SendCommandToGameEnvironment(_selectedInteraction.Command)
+			_interactionDurationPressed = 0
+			_selectedInteraction = null
+		
 	_interact(delta)
-
 # Bereinigt die Auswahl.
 func Clear():
-	$SelectionCast.Clear()
 	$InteractionCast.Clear()
-	_selectedInspectionInteraction = null
+	_selectedInteraction = null
 
 func _interact(delta):
 	if(Input.is_action_pressed("ui_interaction")):
-		if(_selectedInspectionInteraction != null):
+		if(_selectedInteraction != null && _selectedInteraction.InspectMessage != null):
 			_interactionMode(true)
 		else:
+			_interacted = false
 			_interactionMode(false)
 	else:
-		
+		_interacted = false
 		_interactionMode(false)
 	
-	if(_interractionPressed && _selectedInspectionInteraction != null):
+	if(_interractionPressed && _selectedInteraction.InspectMessage != null):
 		_interactionDurationPressed += delta
 		
-	if(_interactionDurationPressed >= 1 && _selectedInspectionInteraction != null):
+	if(_interactionDurationPressed >= 1 && _selectedInteraction.InspectMessage != null && !_interacted):
 		# An dieser Stelle haben wir nun das Objekt untersucht und können den Command ausführen.
 		# TODO: Aktuell wird hier nur die Message ausgegeben. Gedacht ist es, dass an dieser Stelle ein Command ausgeführt wird.
 		# 		Der "Talk" Command, welcher lediglich eine Textbox mit Text anzeigt. Der Command sollte nur übergeben werden,
 		#		gebaut wird er in der "InspectInteraction".
-		print(_selectedInspectionInteraction.InspectMessage)
+		print(_selectedInteraction.InspectMessage)
 		_interactionDurationPressed = 0
+		_interacted = true
+		
 
 func _interactionMode(enabled):
 	if(enabled):
@@ -66,16 +67,9 @@ func _interactionMode(enabled):
 		$InteractionRing.hide()
 		$RingSprite.show()
 
-func _on_SelectionCast_OnInspectionDeselected():
-	_selectedInspectionInteraction = null
-
-func _on_SelectionCast_OnInspectionSelected(inspectionInteraction):
-	_selectedInspectionInteraction = inspectionInteraction
-
-
 func _on_InteractionCast_OnInteractionSelected(interactInteraction):
-	_selectedInteractInteraction = interactInteraction
+	_selectedInteraction = interactInteraction
 
 
 func _on_InteractionCast_OnInteractionDeselected():
-	_selectedInteractInteraction = null
+	_selectedInteraction = null

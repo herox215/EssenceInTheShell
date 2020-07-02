@@ -1,14 +1,3 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene format=2]
 
-[ext_resource path="res://Scripts/Misc/Interactions/InspectInteraction.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Misc/Interactions/InspectInteraction.png" type="Texture" id=2]
-
-[node name="InspectInteraction" type="Node2D"]
-position = Vector2( -1.00138, 4.57764e-05 )
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="QuestionSprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+[node name="Node2D" type="Node2D"]

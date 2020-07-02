@@ -1,8 +1,7 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Assets/Essence/Ring.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Ring.gd" type="Script" id=2]
-[ext_resource path="res://Scripts/Misc/SelectionCast.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Misc/InteractionRing/InteractionRing3.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Misc/InteractionRing/InteractionRing4.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Misc/InteractionRing/InteractionRing6.png" type="Texture" id=6]
@@ -44,20 +43,13 @@ texture = ExtResource( 1 )
 visible = false
 scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 1 )
+frame = 5
 playing = true
-
-[node name="SelectionCast" type="RayCast2D" parent="."]
-position = Vector2( 14.2696, 0.250343 )
-enabled = true
-cast_to = Vector2( 30, 0 )
-script = ExtResource( 3 )
 
 [node name="InteractionCast" type="RayCast2D" parent="."]
 position = Vector2( 14.27, 0.25 )
 enabled = true
 cast_to = Vector2( 30, 0 )
 script = ExtResource( 23 )
-[connection signal="OnInspectionDeselected" from="SelectionCast" to="." method="_on_SelectionCast_OnInspectionDeselected"]
-[connection signal="OnInspectionSelected" from="SelectionCast" to="." method="_on_SelectionCast_OnInspectionSelected"]
 [connection signal="OnInteractionDeselected" from="InteractionCast" to="." method="_on_InteractionCast_OnInteractionDeselected"]
 [connection signal="OnInteractionSelected" from="InteractionCast" to="." method="_on_InteractionCast_OnInteractionSelected"]
