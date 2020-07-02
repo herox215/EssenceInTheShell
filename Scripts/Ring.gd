@@ -1,10 +1,15 @@
 extends Node2D
 
+# Für den "Untersuchungsmodus"
 var _interactionDurationPressed = 0
 var _interractionPressed = false
 
+# Die aktuell Selectierte Interaction. 
+# Wenn sie untersucht wurde wird _interacted auf true gestellt.
 var _selectedInteraction = null
 var _interacted = false
+
+# Aktueller Player
 var Player = null
 
 # Aktualisiert die Position des Rings bzw führt Interaktionen aus.
@@ -27,6 +32,7 @@ func _process(delta):
 			_selectedInteraction = null
 		
 	_interact(delta)
+
 # Bereinigt die Auswahl.
 func Clear():
 	$InteractionCast.Clear()
@@ -57,7 +63,7 @@ func _interact(delta):
 		
 
 func _interactionMode(enabled):
-	if(enabled):
+	if(enabled && !_interacted):
 		_interractionPressed = true
 		$InteractionRing.show()
 		$RingSprite.hide()

@@ -43,7 +43,7 @@ texture = ExtResource( 1 )
 visible = false
 scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 1 )
-frame = 5
+frame = 13
 playing = true
 
 [node name="InteractionCast" type="RayCast2D" parent="."]
