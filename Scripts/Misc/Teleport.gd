@@ -17,7 +17,7 @@ func _on_TeleportArea_body_entered(body):
 	if (_playerValidator.IsPlayer(body) && _ready):
 		$TeleportTime.start()
 		_ready = false
-		print("Player triggert teleport! (Position " + str(body.position) + ")")
+		body.GUI.WriteOutput("Player triggert teleport! (Position " + str(body.position) + ")")
 		var command = load("res://Scripts/Misc/Command.gd").new("ChangeLevel")
 		command.AddValue(LevelToTeleportTo)
 		command.AddValue(xPos)

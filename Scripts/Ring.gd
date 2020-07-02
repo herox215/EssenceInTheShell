@@ -52,7 +52,7 @@ func _interact(delta):
 		# TODO: Aktuell wird hier nur die Message ausgegeben. Gedacht ist es, dass an dieser Stelle ein Command ausgeführt wird.
 		# 		Der "Talk" Command, welcher lediglich eine Textbox mit Text anzeigt. Der Command sollte nur übergeben werden,
 		#		gebaut wird er in der "InspectInteraction".
-		print(_selectedInspectionInteraction.InspectMessage)
+		Player.GUI.WriteOutput(_selectedInspectionInteraction.InspectMessage)
 		_interactionDurationPressed = 0
 
 func _interactionMode(enabled):

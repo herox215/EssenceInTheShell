@@ -12,6 +12,7 @@ func SetGameEnvironment(envi):
 func WriteOutput(text):
 	$Control/TextOutputBox.text = $Control/TextOutputBox.text + "\n"
 	$Control/TextOutputBox.text += "[" + str(OS.get_time().hour) + ":" + str(OS.get_time().minute) +"] : " + str(text)
+	print("[" + str(OS.get_time().hour) + ":" + str(OS.get_time().minute) +"] : " + str(text))
 
 func SendCommandToGameEnvironment(command):
 	_gameEnvi.ExecuteCommand(command)
