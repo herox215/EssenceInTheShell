@@ -10,9 +10,12 @@ func SetGameEnvironment(envi):
 	_gameEnvi = envi
 
 func WriteOutput(text):
+	# Zeitstempel hinzufügen
+	var formattedText = "[" + str(OS.get_time().hour) + ":" + str(OS.get_time().minute) +"] : " + str(text)
 	$Control/TextOutputBox.text = $Control/TextOutputBox.text + "\n"
-	$Control/TextOutputBox.text += "[" + str(OS.get_time().hour) + ":" + str(OS.get_time().minute) +"] : " + str(text)
-	print("[" + str(OS.get_time().hour) + ":" + str(OS.get_time().minute) +"] : " + str(text))
+	# Ausgabe
+	$Control/TextOutputBox.text += formattedText
+	print(formattedText)
 
 func SendCommandToGameEnvironment(command):
 	_gameEnvi.ExecuteCommand(command)
