@@ -22,11 +22,11 @@ func _createPlayer(gui):
 # Optional kann die Position mit angegeben werden.
 func ChangeLevel(lvlName, posX = 0, posY= 0):
 	if(lvlName != "" && lvlName != null && lvlName.to_lower() != $CurrentLevel.name.to_lower()):
-		print("ChangeLevel started...")
+		CurrentPlayer.GUI.WriteOutput("ChangeLevel started...")
 		if($CurrentLevel.get_child_count() > 0):
 			# Aktuell wird einfach immer das Level komplett entfernt mitsamt allen Objekten, Positionen usw.
 			# Hier muss Logik zum Speichern geschrieben werden, damit beim erneuten Betreten nicht wieder alles neu geladen wird.
-			print("Need to clear level cache")
+			CurrentPlayer.GUI.WriteOutput("Need to clear level cache")
 			var childLevel = $CurrentLevel.get_child(0)
 			$CurrentLevel.get_child(0).Close()
 			$CurrentLevel.get_child(0).queue_free()
@@ -43,7 +43,7 @@ func ChangeLevel(lvlName, posX = 0, posY= 0):
 		# Mit Call_Deferred lässt man erst alle Multitreading Prozesse durchlaufen und am Ende fügt man es hinzu.
 		$CurrentLevel.call_deferred("add_child", lvlToChange)
 		
-		print("Level added.")
+		CurrentPlayer.GUI.WriteOutput("Level added.")
 
 	if(int(posX) > 0 || int(posY) > 0):
 		# Aktuell wird immer davon ausgegangen, dass eine Essence existiert. Das muss auf jeden Fall dynamischer werden.
@@ -51,7 +51,7 @@ func ChangeLevel(lvlName, posX = 0, posY= 0):
 
 func ExecuteCommand(command):
 	command.Name = command.Name.to_lower()
-	print("Command will be executed: " + command.Name)
+	CurrentPlayer.GUI.WriteOutput("Command will be executed: " + command.Name)
 	# Wir wollen ein Level ändern
 	if(command.Name == "changelevel" || command.Name == "cl" || command.Name == "tp"):
 		ChangeLevel(command.GetValue(0), command.GetValue(1), command.GetValue(2))
