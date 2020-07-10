@@ -26,12 +26,14 @@ func _physics_process(_delta):
 			var childsOfObject = collidingObject.get_children()
 			var foundInteraction = _getInteractInteraction(childsOfObject)
 		
-			if(foundInteraction != null && foundInteraction.Command != null):
+			if(foundInteraction != null && (foundInteraction.Command != null || foundInteraction.InspectMessage != "")):
 				if(_selectedInteraction != null && foundInteraction != _selectedInteraction):
 					_selectedInteraction.Deselect()
 				
 				_selectedInteraction = foundInteraction
-				_selectedInteraction.OnSelect()
+				if(_selectedInteraction.Command != null):
+					_selectedInteraction.OnSelect()
+				
 				emit_signal("OnInteractionSelected", _selectedInteraction)
 			else: #Wir haben hier jetzt zwar eine Collision, diese ist aber keine InteractionCollision!
 				if(_selectedInteraction != null):

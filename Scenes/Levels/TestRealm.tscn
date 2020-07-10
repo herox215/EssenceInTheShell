@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Misc/BackgroundImage.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Tilesets/MagicForest/Dirtpath/tileset_Dirtpath.tres" type="TileSet" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Scenes/Objects/Nature/Magic Forest/Blue Magic Tree.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Objects/Nature/Magic Forest/Red Magic Tree.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Tilesets/MagicForest/Fence/tileset_Fence.tres" type="TileSet" id=8]
+[ext_resource path="res://Scenes/Objects/Foliage/Magic Forest/MagicGrass.tscn" type="PackedScene" id=9]
 
 [node name="TestRealm" type="Node2D"]
 script = ExtResource( 5 )
@@ -123,8 +124,8 @@ position = Vector2( -176, 104 )
 [node name="Blue Magic Tree3" parent="Objects/Nature" instance=ExtResource( 6 )]
 position = Vector2( 448, -256 )
 OverrideInspectText = "Dieser Baum ist suuuuuuper besonders!"
-OverrideCommandName = "tp"
-OverrideCommandContent = "TestRealm 1 1"
+OverrideCommandName = "changeposition"
+OverrideCommandContent = "1 1"
 
 [node name="Blue Magic Tree4" parent="Objects/Nature" instance=ExtResource( 6 )]
 position = Vector2( -208, -104 )
@@ -145,4 +146,237 @@ position = Vector2( -248, -8 )
 
 [node name="Little House" parent="Objects/Structure" instance=ExtResource( 4 )]
 position = Vector2( 270.498, -165.775 )
+
+[node name="Foliage" type="YSort" parent="Objects"]
+
+[node name="MagicGrass" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 33.1902, 75.8854 )
+
+[node name="MagicGrass14" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 119.395, -99.0387 )
+
+[node name="MagicGrass15" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 113.177, -87.9364 )
+
+[node name="MagicGrass16" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 121.319, -92.5253 )
+
+[node name="MagicGrass17" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 190.005, -85.7159 )
+
+[node name="MagicGrass33" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 245.695, -121.576 )
+
+[node name="MagicGrass34" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 241.616, -114.967 )
+
+[node name="MagicGrass35" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 251.882, -117.498 )
+
+[node name="MagicGrass36" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 254.132, -124.53 )
+
+[node name="MagicGrass37" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 297.024, -122.42 )
+
+[node name="MagicGrass38" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 229.382, -151.109 )
+
+[node name="MagicGrass39" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 234.304, -111.029 )
+
+[node name="MagicGrass40" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 250.757, -101.326 )
+
+[node name="MagicGrass41" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 249.21, -112.295 )
+
+[node name="MagicGrass42" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 236.976, -102.451 )
+
+[node name="MagicGrass43" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 217.709, -133.108 )
+
+[node name="MagicGrass44" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 347.932, -99.4976 )
+
+[node name="MagicGrass45" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 356.511, -105.404 )
+
+[node name="MagicGrass46" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 336.401, -101.326 )
+
+[node name="MagicGrass47" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 363.261, -46.199 )
+
+[node name="MagicGrass48" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 379.855, -47.7459 )
+
+[node name="MagicGrass49" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 370.996, -41.5582 )
+
+[node name="MagicGrass50" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 347.651, -59.6995 )
+
+[node name="MagicGrass51" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 316.853, -64.059 )
+
+[node name="MagicGrass52" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 297.587, -37.48 )
+
+[node name="MagicGrass53" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 320.228, 8.64651 )
+
+[node name="MagicGrass54" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 313.9, 14.6936 )
+
+[node name="MagicGrass55" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 426.544, -19.4794 )
+
+[node name="MagicGrass56" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 473.798, -253.259 )
+
+[node name="MagicGrass57" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 469.78, -247.711 )
+
+[node name="MagicGrass58" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 471.31, -240.058 )
+
+[node name="MagicGrass59" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 444.527, -237.38 )
+
+[node name="MagicGrass60" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 456.197, -239.485 )
+
+[node name="MagicGrass61" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 436.875, -246.563 )
+
+[node name="MagicGrass62" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 459.449, -246.754 )
+
+[node name="MagicGrass63" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 430.37, -258.807 )
+
+[node name="MagicGrass64" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 427.692, -251.154 )
+
+[node name="MagicGrass65" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 427.692, -241.398 )
+
+[node name="MagicGrass66" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 435.536, -235.658 )
+
+[node name="MagicGrass67" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 472.267, -268.946 )
+
+[node name="MagicGrass68" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 471.119, -282.72 )
+
+[node name="MagicGrass69" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 419.848, -280 )
+
+[node name="MagicGrass70" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 419.848, -269.287 )
+
+[node name="MagicGrass71" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 422.526, -259.913 )
+
+[node name="MagicGrass72" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 418.509, -239.443 )
+
+[node name="MagicGrass73" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 425.97, -229.495 )
+
+[node name="MagicGrass74" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 421.378, -183.963 )
+
+[node name="MagicGrass75" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 336.82, -224.903 )
+
+[node name="MagicGrass76" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 373.36, -246.712 )
+
+[node name="MagicGrass77" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 360.733, -177.267 )
+
+[node name="MagicGrass18" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 183.048, -96.3741 )
+
+[node name="MagicGrass19" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 190.745, -96.8182 )
+
+[node name="MagicGrass20" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 130.941, -96.5222 )
+
+[node name="MagicGrass21" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 171.057, -98.5946 )
+
+[node name="MagicGrass22" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 176.535, -93.2655 )
+
+[node name="MagicGrass23" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 128.276, -89.1206 )
+
+[node name="MagicGrass24" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 141.303, -97.8545 )
+
+[node name="MagicGrass25" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 141.007, -88.8246 )
+
+[node name="MagicGrass26" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 147.668, -99.9269 )
+
+[node name="MagicGrass27" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 143.376, -84.5317 )
+
+[node name="MagicGrass28" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 158.179, -95.9301 )
+
+[node name="MagicGrass29" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 155.218, -87.3443 )
+
+[node name="MagicGrass30" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 167.209, -90.0088 )
+
+[node name="MagicGrass31" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 173.722, -86.9001 )
+
+[node name="MagicGrass32" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 173.722, -86.9001 )
+
+[node name="MagicGrass2" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 25.5549, 70.5875 )
+
+[node name="MagicGrass3" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 41.1371, 67.6269 )
+
+[node name="MagicGrass4" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 32.8785, 64.1988 )
+
+[node name="MagicGrass5" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 17.6079, 83.6765 )
+
+[node name="MagicGrass6" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 14.4915, 76.8204 )
+
+[node name="MagicGrass7" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 16.8288, 63.108 )
+
+[node name="MagicGrass8" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 27.8922, 57.4984 )
+
+[node name="MagicGrass9" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 16.9847, 55.9402 )
+
+[node name="MagicGrass10" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 6.07712, 64.043 )
+
+[node name="MagicGrass11" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 4.98636, 76.6646 )
+
+[node name="MagicGrass12" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 7.79115, 91.9351 )
+
+[node name="MagicGrass13" parent="Objects/Foliage" instance=ExtResource( 9 )]
+position = Vector2( 7.79115, 91.9351 )
 [connection signal="teleport" from="Interactions/Teleport" to="." method="_on_Teleport_teleport"]

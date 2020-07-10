@@ -21,6 +21,8 @@ func SendCommandToGameEnvironment(command):
 	_gameEnvi.ExecuteCommand(command)
 
 func _process(delta):
+	position = _gameEnvi.CurrentPlayer.position
+	position.round()
 	if(_debugMode):
 		$Control/CommandTextBox.show()
 		$Control/TextOutputBox.show()
