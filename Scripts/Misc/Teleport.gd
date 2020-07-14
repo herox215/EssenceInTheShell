@@ -5,7 +5,6 @@ export var xPos = 0
 export var yPos = 0
 var _playerValidator = null
 var _ready = true
-signal teleport(command)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,7 +21,9 @@ func _on_TeleportArea_body_entered(body):
 		command.AddValue(LevelToTeleportTo)
 		command.AddValue(xPos)
 		command.AddValue(yPos)
-		emit_signal("teleport", command)
+		
+		# Nicht wirklich clean. Aber somit sparen wir uns das Auffangen des Signals im Level, was noch dreckiger ist.
+		body.GUI.SendCommandToGameEnvironment(command)
 
 func _on_TeleportTime_timeout():
 	_ready = true

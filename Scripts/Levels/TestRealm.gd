@@ -10,7 +10,3 @@ func Open():
 
 func Close():
 	$Objects.remove_child(_gameEnvi.CurrentPlayer)
-	
-
-func _on_Teleport_teleport(command):
-	_gameEnvi.ExecuteCommand(command)

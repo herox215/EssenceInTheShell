@@ -15,4 +15,3 @@ xPos = 271
 yPos = -103
 
 [node name="Objects" type="YSort" parent="."]
-[connection signal="teleport" from="Interactions/Teleport" to="." method="_on_Teleport_teleport"]

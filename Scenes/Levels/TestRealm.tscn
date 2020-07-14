@@ -379,4 +379,3 @@ position = Vector2( 7.79115, 91.9351 )
 
 [node name="MagicGrass13" parent="Objects/Foliage" instance=ExtResource( 9 )]
 position = Vector2( 7.79115, 91.9351 )
-[connection signal="teleport" from="Interactions/Teleport" to="." method="_on_Teleport_teleport"]
