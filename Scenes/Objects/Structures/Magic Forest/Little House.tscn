@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Assets/Objects/Structures/Magic Forest/Little_House.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Misc/Interactions/InteractInteraction.tscn" type="PackedScene" id=2]
 
 [node name="Little House" type="Node2D"]
 position = Vector2( -0.581131, -41.0668 )
@@ -13,3 +14,7 @@ region_filter_clip = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( -35.0055, 13.3162, -30.8534, 29.2602, -31.1856, 41.8825, -27.8639, 44.2077, -16.5702, 44.2077, -10.4252, 43.7094, -8.76433, 42.3807, -9.26257, 18.963, 10.5013, 19.1291, 10.6674, 41.2182, 14.6534, 43.2112, 19.6359, 44.3738, 25.781, 43.8755, 30.4313, 42.879, 31.76, 40.886, 32.5904, 28.4298, 35.0816, 10.6589, 35.4138, -13.091, 33.0886, -18.5718, 32.5904, -22.8899, -31.6838, -23.5543, -32.5142, -18.5718, -34.175, -12.2606 )
+
+[node name="InteractInteraction" parent="StaticBody2D" instance=ExtResource( 2 )]
+position = Vector2( 28.863, 8.13588 )
+InspectMessage = "It's just a house. I wonder where it leads me."

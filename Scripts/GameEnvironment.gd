@@ -64,4 +64,4 @@ func ExecuteCommand(command):
 		ChangeLevel("", command.GetValue(0), command.GetValue(1))
 	
 	if(command.Name == "showtext"):
-		print("showtext")
+		CurrentPlayer.GUI.InitDialog(command.GetValue(0))

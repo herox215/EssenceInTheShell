@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/UI/GUI/GUIControl.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/UI/GUI/CommandTextBox.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/UI/GUI/Control.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/UI/Dialog.tscn" type="PackedScene" id=4]
 
 [node name="GUI" type="Camera2D"]
+pause_mode = 2
 z_index = 4096
 z_as_relative = false
 current = true
@@ -50,8 +50,5 @@ custom_colors/default_color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Dialog" parent="Control" instance=ExtResource( 4 )]
-visible = false
 [connection signal="CommandCreated" from="Control/CommandTextBox" to="." method="_on_CommandTextBox_CommandCreated"]
 [connection signal="text_entered" from="Control/CommandTextBox" to="Control/CommandTextBox" method="_on_CommandTextBox_text_entered"]

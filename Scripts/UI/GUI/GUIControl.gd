@@ -20,6 +20,15 @@ func WriteOutput(text):
 func SendCommandToGameEnvironment(command):
 	_gameEnvi.ExecuteCommand(command)
 
+func InitDialog(text):
+	var dialog = load("res://Scenes/UI/Dialog.tscn").instance()
+	dialog.Text = text
+	$Control.add_child(dialog)
+	
+	dialog.Configure()
+	dialog.Display()
+	
+
 func _process(delta):
 	position = _gameEnvi.CurrentPlayer.position
 	position.round()
