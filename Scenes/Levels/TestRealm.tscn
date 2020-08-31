@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Misc/BackgroundImage.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Tilesets/MagicForest/Dirtpath/tileset_Dirtpath.tres" type="TileSet" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/Objects/Nature/Magic Forest/Red Magic Tree.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Tilesets/MagicForest/Fence/tileset_Fence.tres" type="TileSet" id=8]
 [ext_resource path="res://Scenes/Objects/Foliage/Magic Forest/MagicGrass.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Npcs/TestDude.tscn" type="PackedScene" id=10]
 
 [node name="TestRealm" type="Node2D"]
 script = ExtResource( 5 )
@@ -379,3 +380,8 @@ position = Vector2( 7.79115, 91.9351 )
 
 [node name="MagicGrass13" parent="Objects/Foliage" instance=ExtResource( 9 )]
 position = Vector2( 7.79115, 91.9351 )
+
+[node name="Npc" type="YSort" parent="Objects"]
+
+[node name="Testdude" parent="Objects/Npc" instance=ExtResource( 10 )]
+position = Vector2( 120, -152 )
